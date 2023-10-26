@@ -22,8 +22,9 @@ void loop() {
     float voltage = sensorValue*5/1023.0;
     float current = (voltage-2.5)/0.185;
     Serial.println(current);
-
-     if (command.equals("f") || command.equals("b") || command.equals("l") || command.equals("r") || command.equals("s") || command.equals("c")) {
+    command = Serial.readStringUntil('\n');
+    command.trim();
+    if (command.equals("f") || command.equals("b") || command.equals("l") || command.equals("r") || command.equals("s") || command.equals("c")) {
     string = command;
   }
 
